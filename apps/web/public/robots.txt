@@ -1,0 +1,8 @@
+# ALAYA INSIDER
+# https://alayainsider.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://alayainsider.com/sitemap.xml

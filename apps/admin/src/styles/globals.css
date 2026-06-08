@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-obsidian: #0A0A0A;
+  --color-onyx: #111111;
+  --color-graphite: #1A1A1A;
+  --color-softWhite: #F5F5F7;
+  --color-muted: #8E8E93;
+  --color-accent: #D4FF00;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: "Manrope", sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background-color: var(--color-obsidian);
+    color: var(--color-softWhite);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-obsidian);
+  }
+}

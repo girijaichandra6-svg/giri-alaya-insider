@@ -1,0 +1,46 @@
+{
+  "name": "@alaya/db",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo dist node_modules",
+    "db:seed": "npx tsx prisma/seed.ts",
+    "test": "npx tsx src/__tests__/integration.test.ts && npx tsx src/__tests__/edge-cases.test.ts",
+    "test:edge": "npx tsx src/__tests__/edge-cases.test.ts",
+    "test:integration": "npx tsx src/__tests__/integration.test.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "prisma-extension-pgvector": "^0.11.0"
+  },
+  "devDependencies": {
+    "@alaya/tsconfig": "workspace:*",
+    "@types/node": "^22.19.19",
+    "prisma": "^6.7.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.0"
+  }
+}

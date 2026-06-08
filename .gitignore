@@ -1,0 +1,16 @@
+node_modules/
+.turbo/
+dist/
+.next/
+*.tsbuildinfo
+.env
+.env.local
+*.log
+.DS_Store
+coverage/
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+\nnul

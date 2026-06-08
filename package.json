@@ -1,0 +1,29 @@
+{
+  "name": "alaya-insider",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ALAYA INSIDER — Premium Global Affiliate Media Platform",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "postinstall": "npx playwright install chromium 2>/dev/null || true",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "prettier": "^3.5.0",
+    "@turbo/gen": "^2.5.0",
+    "vitest": "^4.1.8",
+    "@playwright/test": "^1.52.0"
+  },
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
