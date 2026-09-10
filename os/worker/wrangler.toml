@@ -1,0 +1,32 @@
+name = "alaya-go"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Non-secret vars only. AMAZON_TAG lives in `wrangler secret` — never in this file.
+[vars]
+MARKETPLACE_HOST = "www.amazon.com"
+FALLBACK_URL     = "https://alayainsider.com/good-finds"
+HOSTNAME         = "alayainsider.com"
+GO_PATH          = "/go"
+LOG_WEBHOOK_URL  = ""   # set via secret after Apps Script web app deploy
+
+[[kv_namespaces]]
+binding    = "ASIN_MAP"
+id         = "REPLACE_WITH_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_KV_PREVIEW_ID"
+
+[[analytics_engine_datasets]]
+binding = "CLICKS"
+dataset = "alaya_go_clicks"
+
+[observability]
+enabled = true
+
+# Routes: only /go/* on the primary domain reaches this Worker.
+# Use this ONLY if the site is NOT already handling /go via Next.js.
+[[routes]]
+pattern = "alayainsider.com/go/*"
+zone_name = "alayainsider.com"
+
+[triggers]
+crons = ["0 * * * *"]   # hourly link-health probe

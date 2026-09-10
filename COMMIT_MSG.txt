@@ -1,0 +1,11 @@
+ALAYA OS compliance + 24/7 pipeline: single-hop /go, exact disclosure, orchestrator
+
+- /go/[id]: tag from env only (AMAZON_TAG), UTM captured not forwarded,
+  /good-finds fallback, single-hop no-cache headers, bot-filtered clicks
+- Product pages: exact FTC phrase via AmazonDisclosure component
+- Buy links: rel="sponsored nofollow noopener"
+- os/: full ALAYA OS pipeline (orchestrator, agents, monitors, Apps Script
+  sources, manual-capture operator flow) + GitHub Actions 24/7 cron
+
+🤖 Generated with Codebuff
+Co-Authored-By: Codebuff <noreply@codebuff.com>

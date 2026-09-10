@@ -12,6 +12,7 @@ import { ProductInfo } from "./_components/product-info";
 import { Separator } from "@/components/ui/separator";
 import { Suspense } from "react";
 import { siteConfig } from "@alaya/config/site";
+import { AmazonDisclosure } from "@/components/shared/amazon-disclosure";
 
 function buildProductSchema(product: ProductDetail): Record<string, unknown> {
   const url = `${siteConfig.url}/${product.category.slug}/${product.subcategory?.slug ?? "unknown"}/product/${product.slug}`;
@@ -186,13 +187,10 @@ export default async function ProductPage({
         </Suspense>
       </div>
 
-      {/* Affiliate Disclosure */}
+      {/* Affiliate Disclosure — exact phrase required on every product page */}
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-8">
-          <p className="text-xs text-muted/50 font-body text-center">
-            ALAYA INSIDER participates in affiliate programs. When you purchase
-            through links on our site, we may earn a commission.
-          </p>
+          <AmazonDisclosure className="text-xs text-muted/50 font-body text-center" />
         </div>
       </div>
     </main>

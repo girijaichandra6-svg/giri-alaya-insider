@@ -1,0 +1,27 @@
+name: alaya-orchestrator
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # intake
+    - cron: '0 * * * *'     # hourly monitors
+    - cron: '0 13 * * *'    # daily monitors + digest (9am ET = 13:00 UTC)
+    - cron: '0 22 * * 5'    # weekly review (Fri)
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency: { group: alaya-orchestrator, cancel-in-progress: false }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Dispatch
+        working-directory: os/orchestrator
+        env:
+          GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
+          SHEET_WEBHOOK_URL:     ${{ secrets.SHEET_WEBHOOK_URL }}
+          STATE_WEBHOOK_SECRET:  ${{ secrets.STATE_WEBHOOK_SECRET }}
+          AMAZON_TAG:            ${{ secrets.AMAZON_TAG }}
+        run: node dispatch.js

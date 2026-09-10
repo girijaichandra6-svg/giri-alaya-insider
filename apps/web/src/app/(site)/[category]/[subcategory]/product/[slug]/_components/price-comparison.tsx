@@ -63,7 +63,7 @@ export function PriceComparison({
               <a
                 href={`/go/${link.id}`}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="sponsored nofollow noopener"
               >
                 <Button size="sm" variant="primary">
                   <span className="hidden sm:inline">Buy at</span>{" "}

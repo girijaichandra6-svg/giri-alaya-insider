@@ -1,0 +1,13 @@
+{
+  "name": "alaya-go-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Alaya /go/<ASIN> single-hop redirect Worker (Module 2)",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

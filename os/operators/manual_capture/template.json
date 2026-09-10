@@ -1,0 +1,16 @@
+{
+  "asin": "REPLACE_ME",
+  "captured_at": "2026-01-01T00:00:00Z",
+  "captured_by": "owner@alayainsider.com",
+  "page_hash": "sha256:REPLACE_WITH_SHASUM_OF_SAVED_SOURCE",
+  "screenshot_path": "captures/REPLACE_ME/page_TIMESTAMP.png",
+  "fields": {
+    "title": "REPLACE",
+    "brand": "REPLACE",
+    "price": 0.00,
+    "list_price": 0.00,
+    "rating": 0.0,
+    "review_count": 0
+  },
+  "notes": ""
+}

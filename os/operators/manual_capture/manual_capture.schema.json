@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Alaya manual capture",
+  "type": "object",
+  "required": ["asin", "captured_at", "captured_by", "page_hash", "screenshot_path", "fields"],
+  "properties": {
+    "asin":            { "type": "string", "pattern": "^[A-Z0-9]{10}$" },
+    "captured_at":     { "type": "string", "format": "date-time" },
+    "captured_by":     { "type": "string", "format": "email" },
+    "page_hash":       { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "screenshot_path": { "type": "string", "minLength": 4 },
+    "fields": {
+      "type": "object",
+      "required": ["title", "brand", "price", "rating", "review_count"],
+      "properties": {
+        "title":        { "type": "string", "minLength": 6 },
+        "brand":        { "type": "string", "minLength": 2 },
+        "price":        { "type": "number", "exclusiveMinimum": 0 },
+        "list_price":   { "type": "number", "exclusiveMinimum": 0 },
+        "rating":       { "type": "number", "minimum": 0, "maximum": 5 },
+        "review_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

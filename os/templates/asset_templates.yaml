@@ -1,0 +1,106 @@
+# ── Covers ────────────────────────────────────────────────────────────────
+cover_tiktok:
+  size: "1080x1920"
+  safe_zone: { top: 200, bottom: 420, left: 80, right: 200 }   # avoid UI
+  background: "#FFFFFF | #F2EDE7 | #E7E2DA"                     # muted palette only
+  product_placement: "hero, centered, ~55% of width, on a flat surface or seamless bg"
+  headline:
+    font: "Inter | Söhne | system-ui"
+    weight: 600
+    size: 96
+    color: "#1A1A1A"
+    max_lines: 2
+    letter_spacing: -1
+  subhead:
+    font: "Inter | Söhne | system-ui"
+    weight: 400
+    size: 44
+    color: "#5A5A5A"
+  logo:
+    position: "top-left, 40px inset"
+    height: 44
+    opacity: 0.9
+  disclosure_overlay: "tiktok"
+
+cover_instagram_reels:
+  size: "1080x1920"
+  safe_zone: { top: 108, bottom: 380, left: 60, right: 60 }
+  # same system as tiktok, disclosure overlay default = instagram_reels
+  disclosure_overlay: "instagram_reels"
+
+cover_youtube_short:
+  size: "1080x1920"
+  safe_zone: { top: 120, bottom: 320, left: 60, right: 220 }
+  disclosure_overlay: "youtube_shorts"
+
+cover_youtube_thumbnail:
+  size: "1280x720"
+  safe_zone: { top: 60, bottom: 60, left: 60, right: 60 }
+  headline_size: 84   # fits 3-4 words max
+  logo_position: "bottom-right"
+
+cover_pinterest_pin:
+  size: "1000x1500"
+  safe_zone: { top: 120, bottom: 240 }
+  background: "#F2EDE7"          # Pinterest rewards pale, editorial
+  headline_size: 78
+  logo_position: "top-center"
+
+carousel_deal_1080x1350:         # D1 IG feed
+  size: "1080x1350"
+  safe_zone: { top: 80, bottom: 140 }
+  slide_1_headline_size: 92
+  slide_n_body_size: 40
+  swatch_bar: { height: 6, color: "#1A1A1A" }     # slide progress indicator
+
+# ── Disclosure overlays (mandatory, per Section 8.4) ─────────────────────
+disclosure_overlay_tiktok:
+  text: "#ad · affiliate link in bio"
+  position: "bottom-center, 320px above bottom edge"
+  size: 34
+  bg: "rgba(0,0,0,0.55)"
+  fg: "#FFFFFF"
+  radius: 8
+  visible_seconds_min: 3
+
+disclosure_overlay_instagram_reels:
+  text: "Paid partnership · #ad"
+  position: "top-center, 140px below top edge"
+  size: 32
+  bg: "rgba(255,255,255,0.85)"
+  fg: "#1A1A1A"
+  visible_seconds_min: 3
+
+disclosure_overlay_youtube_shorts:
+  text: "affiliate · #ad"
+  position: "bottom-left, 200px above bottom edge, 40px inset"
+  size: 30
+  bg: "rgba(0,0,0,0.6)"
+  fg: "#FFFFFF"
+  visible_seconds_min: 3
+
+disclosure_overlay_youtube_long:
+  text: "As an Amazon Associate I earn from qualifying purchases."
+  position: "burned-in, bottom-center, seconds 30-38"
+  size: 28
+  bg: "rgba(0,0,0,0.6)"
+  fg: "#FFFFFF"
+
+disclosure_overlay_pinterest:
+  text: "affiliate"
+  position: "bottom-right, 40px inset"
+  size: 24
+  bg: "rgba(255,255,255,0.9)"
+  fg: "#1A1A1A"
+
+# ── AI-generated label (Section 7.3) ─────────────────────────────────────
+ai_generated_label:
+  text: "AI-generated"
+  position: "top-left, 40px inset"
+  size: 28
+  bg: "#000000"
+  fg: "#FFFFFF"
+  radius: 6
+  # Rule enforced in Compliance runner point 4:
+  #   if synthetic_person === true → label must be visible for the
+  #   FULL duration of the synthetic person's appearance. Not a fade-in.

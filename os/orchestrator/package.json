@@ -1,0 +1,13 @@
+{
+  "name": "alaya-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ALAYA OS orchestrator — cron-driven pipeline runner (Module 14)",
+  "scripts": {
+    "start": "node dispatch.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
